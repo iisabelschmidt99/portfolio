@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isabel · Portfolio H1 2026</title>
+<style>
+  :root{
+    --black:#0a0a0a;
+    --ink:#141414;
+    --navy:#1b2a4a;
+    --navy-2:#26406e;
+    --navy-accent:#345aa0;
+    --navy-line:#2f4a7d;
+    --white:#ffffff;
+    --paper:#f6f7f9;
+    --grey:#6b7280;
+    --grey-2:#9aa1ab;
+    --line:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ---------- HEADER ---------- */
+  header{background:var(--black);color:var(--white);padding:64px 0 56px;border-bottom:4px solid var(--navy)}
+  header .eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey-2);margin-bottom:18px}
+  header h1{font-size:52px;line-height:1.05;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  header h1 .accent{color:#7fa0d6}
+  header .sub{font-size:20px;color:#c9cfd8;font-weight:500;margin-top:14px;max-width:640px}
+  header .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+  header .meta span{border:1px solid var(--navy-line);padding:7px 14px;border-radius:999px;font-size:13px;color:#c9cfd8}
+
+  /* ---------- SECTION ---------- */
+  section{padding:56px 0}
+  .section-head{display:flex;align-items:baseline;gap:16px;margin-bottom:28px}
+  .section-head h2{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--navy);font-weight:800}
+  .section-head .rule{flex:1;height:1px;background:var(--line)}
+
+  /* ---------- KPIs (stat cards) ---------- */
+  .kpi-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .kpi{
+    border:1px solid var(--line);border-radius:14px;padding:22px 20px;background:var(--white);
+    position:relative;display:flex;flex-direction:column;
+  }
+  .kpi::before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;background:var(--navy);border-radius:0 3px 3px 0}
+  .kpi .num{font-size:40px;font-weight:800;letter-spacing:-.02em;color:var(--black);line-height:1}
+  .kpi .num small{font-size:20px;font-weight:700;color:var(--navy)}
+  .kpi .label{margin-top:8px;font-size:14.5px;color:var(--black);font-weight:700}
+  .kpi .detail{margin-top:7px;font-size:13px;color:var(--navy-accent);font-weight:600;line-height:1.45}
+  .kpi.wide{grid-column:span 2}
+  .kpi.combo{grid-column:span 2}
+  .kpi.combo::before{background:var(--navy)}
+  .kpi.combo .head{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:800;margin-bottom:14px}
+  .kpi.combo .combo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 14px}
+  .kpi.combo .ci .n{font-size:30px;font-weight:800;color:var(--black);line-height:1}
+  .kpi.combo .ci .n small{font-size:16px;font-weight:700;color:var(--navy)}
+  .kpi.combo .ci .t{font-size:12px;color:var(--navy-accent);font-weight:600;margin-top:5px;line-height:1.35}
+  .kpi.projects{grid-column:span 2}
+  .kpi.projects::before{background:var(--navy)}
+  .kpi.projects .head{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:800;margin-bottom:14px}
+  .kpi.projects .proj-lead{display:flex;gap:18px;align-items:flex-start}
+  .kpi.projects .proj-lead .big{font-size:56px;font-weight:800;color:var(--black);line-height:.9;flex:none}
+  .kpi.projects .proj-lead .lead-txt{font-size:14px;color:#333;line-height:1.5;padding-top:4px}
+  .kpi.projects .proj-lead .lead-txt b{color:var(--navy-accent)}
+  .kpi.projects .detail{margin-top:14px;font-size:13px;color:var(--navy-accent);font-weight:700;letter-spacing:.02em}
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .proj{
+    background:var(--black);color:var(--white);border-radius:14px;padding:24px 22px;position:relative;overflow:hidden;
+  }
+  .proj .name{font-size:22px;font-weight:800;letter-spacing:-.01em}
+  .proj .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7fa0d6;font-weight:700;margin-top:2px;margin-bottom:14px}
+  .proj ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .proj li{padding-left:16px;position:relative;font-size:14px;color:#d6dbe4}
+  .proj li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:#7fa0d6;border-radius:50%}
+  /* featured flagship project */
+  .proj.feature{grid-column:1/-1;border:1px solid var(--navy-line);padding:30px 30px 28px}
+  .proj.feature .feat-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+  .proj.feature .name{font-size:38px}
+  .proj.feature .role{font-size:12px;margin-bottom:0}
+  .proj.feature .badge{
+    border:1px solid var(--navy-line);background:rgba(127,160,214,.12);color:#a9c1e6;
+    font-size:12px;font-weight:700;letter-spacing:.04em;padding:8px 14px;border-radius:999px;white-space:nowrap;
+  }
+  .proj.feature ul.two-col{display:grid;grid-template-columns:1fr 1fr;gap:9px 28px}
+  .proj.feature li{font-size:14.5px}
+
+  /* ---------- THEME CARDS ---------- */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 24px;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--navy)}
+  .card .icon{width:38px;height:38px;border-radius:9px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;margin-bottom:14px}
+  .card h3{font-size:17px;font-weight:800;margin-bottom:6px}
+  .card .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:12px}
+  .card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .card li{padding-left:18px;position:relative;font-size:14.5px;color:#333}
+  .card li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--navy);border-radius:50%}
+  .card li b{color:var(--black)}
+
+  /* ---------- TIMELINE ---------- */
+  .phase{display:grid;grid-template-columns:180px 1fr;gap:0;border-left:2px solid var(--navy)}
+  .phase .tag{padding:26px 24px 40px 24px;position:relative}
+  .phase .tag::before{content:"";position:absolute;left:-9px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--navy);border:3px solid var(--paper)}
+  .phase .tag .q{font-size:20px;font-weight:800;color:var(--black)}
+  .phase .tag .focus{font-size:13px;color:var(--navy);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+  .phase .body{padding:24px 0 40px 30px}
+  .phase .body h3{font-size:18px;font-weight:700;margin-bottom:14px}
+  .phase .body ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .phase .body li{padding-left:20px;position:relative;font-size:15px;color:#333}
+  .phase .body li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--navy);border-radius:2px}
+  .phase .body li b{color:var(--black)}
+
+  /* ---------- GALLERY (horizontaler Scroll) ---------- */
+  .gallery{
+    display:flex;gap:18px;overflow-x:auto;padding-bottom:14px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  }
+  .gallery img{
+    height:340px;width:auto;flex:0 0 auto;border:1px solid var(--line);border-radius:12px;
+    background:#0e1116;display:block;scroll-snap-align:start;
+  }
+  .gallery::-webkit-scrollbar{height:10px}
+  .gallery::-webkit-scrollbar-track{background:#eceef2;border-radius:999px}
+  .gallery::-webkit-scrollbar-thumb{background:var(--navy);border-radius:999px}
+
+  footer{background:var(--black);color:#c9cfd8;padding:40px 0;margin-top:20px;text-align:center;font-size:13px}
+  footer b{color:var(--white)}
+
+  @media(max-width:820px){
+    header h1{font-size:38px}
+    .kpi-grid{grid-template-columns:repeat(2,1fr)}
+    .kpi.wide{grid-column:span 2}
+    .proj-grid{grid-template-columns:1fr}
+    .proj.feature ul.two-col{grid-template-columns:1fr}
+    .proj.feature .name{font-size:32px}
+    .kpi.combo .combo-grid{grid-template-columns:repeat(2,1fr)}
+    .phase{grid-template-columns:1fr}
+    .phase .body{padding-left:24px}
+    .cards{grid-template-columns:1fr}
+    .gallery img{height:240px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Fenyx · Isabel</div>
+    <h1>Feedbackgespräch<br><span class="accent">Q1 &amp; Q2</span></h1>
+  </div>
+</header>
+
+<div class="kpi-band">
+  <div class="wrap">
+    <div class="kpi-grid">
+
+      <div class="kpi projects">
+        <div class="head">Kunden &amp; Projekte betreut &amp; geowned</div>
+        <div class="proj-lead">
+          <span class="big">5</span>
+          <span class="lead-txt">Projekte über den gesamten Zyklus begleitet — <b>MSD &amp; VTG end-to-end allein geowned</b> (operative Unterstützung: Lennart): Inventarisierung, Verträge, Angebote, Partnersuche, Teamplanung, Retros &amp; Rechnungen.</span>
+        </div>
+        <div class="detail">N26 · MSD · VTG · MBDA · DB</div>
+      </div>
+
+      <div class="kpi">
+        <div class="num">5</div>
+        <div class="label">Mitarbeiterverkäufe abgeschlossen</div>
+        <div class="detail">MBDA 2× · MSD 3×</div>
+      </div>
+
+      <div class="kpi">
+        <div class="num">13<small> T</small></div>
+        <div class="label">Vor-Ort-Einsätze</div>
+        <div class="detail">Madrid 3T · Inventarisierung &amp; Mitarbeiterverkauf 10T (u. a. Luzern, allein)</div>
+      </div>
+
+      <div class="kpi combo">
+        <div class="head">Automation &amp; Dashboards</div>
+        <div class="combo-grid">
+          <div class="ci"><div class="n">&gt;7</div><div class="t">Running Workflows konzipiert &amp; geowned</div></div>
+          <div class="ci"><div class="n">2</div><div class="t">Dashboards gebaut &amp; visualisiert</div></div>
+          <div class="ci"><div class="n">2</div><div class="t">Prozesse im Ops automatisiert</div></div>
+          <div class="ci"><div class="n">9</div><div class="t">Prozesse im Marketing automatisiert</div></div>
+        </div>
+        <div class="detail" style="margin-top:16px">z. B. Content Machinery · LinkedIn Outreach · Reply Handling · Building-Radar Export · Signaling → Enrichment to HubSpot · LinkedIn Post-Generierung · DB-Prozess · Events Rechnung &amp; Angebote · Ops Website-Leads</div>
+      </div>
+
+      <div class="kpi wide">
+        <div class="num">1</div>
+        <div class="label">Website migriert &amp; neu gestaltet</div>
+        <div class="detail">Migration + Redesign — seither in alleiniger Verantwortung, inkl. HubSpot-Umstrukturierung</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><h2>Der Weg: Q1 &amp; Q2</h2><div class="rule"></div></div>
+
+    <div class="phase">
+      <div class="tag"><div class="q">Q1</div><div class="focus">Ops-Fokus</div></div>
+      <div class="body">
+        <h3>Operative Projektarbeit vor Ort &amp; im Hintergrund</h3>
+        <ul>
+          <li><b>N26 · Madrid (3 Tage):</b> Angebote, Slides, Projektnachbereitung &amp; Stakeholder-Management — inkl. Inventarisierung und QM.</li>
+          <li><b>MSD-Inventarisierung · Luzern:</b> 3 Tage allein vor Ort.</li>
+          <li><b>VTG &amp; DB:</b> Besichtigungen vor Ort begleitet.</li>
+          <li><b>MSD &amp; VTG Projektplanung:</b> Verträge, Angebote, Logistikpartner vor Ort, Retros, Teamplanung, Rechnungen.</li>
+          <li><b>Mitarbeiterverkäufe:</b> MBDA 2× · MSD 3×.</li>
+          <li><b>Ab Februar parallel — Einstieg Automation:</b> Einarbeitung in n8n, Automated Outreach Machine (allein konzipiert &amp; umgesetzt), Building-Radar-Flow geowned, DB-Dashboard-MVP.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="tag"><div class="q">Q2</div><div class="focus">Marketing &amp; Solo-Übernahme</div></div>
+      <div class="body">
+        <h3>Lead-Engine, Content, digitale Infrastruktur &amp; Übernahme des gesamten Marketings</h3>
+        <ul>
+          <li><b>n8n-Leadgenerierung:</b> Mehrere Lead-Quellen angebunden — Salesviewer, Deutsche Startups, Startupdetector.</li>
+          <li><b>Content Machinery:</b> Pipeline von Prompt zu fertigen Posts.</li>
+          <li><b>Website</b> — Migration + Redesign · <b>HubSpot-Umstrukturierung.</b></li>
+          <li><b>Ops-Prozesse parallel:</b> Website-Leads automatisiert, DB-Dashboard weitergeführt, wöchentliche Termine mit dem Tech-Team („Mitarbeiterverkauf goes Platform").</li>
+          <li><b>Übernahme sämtlicher Aufgaben des gesamten Marketing-Teams:</b> Website, BR, LinkedIn Scraper, HubSpot.</li>
+          <li><b>Zum Ende Q2:</b> Einarbeitung Irina &amp; Nachbereitung der Mitarbeiterverkäufe.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><h2>Einblicke · n8n-Flows &amp; Projektpläne</h2><div class="rule"></div></div>
+    <div class="gallery">
+      <img src="assets/shot-1.png" alt="">
+      <img src="assets/shot-2.png" alt="">
+      <img src="assets/shot-3.png" alt="">
+      <img src="assets/shot-4.png" alt="">
+      <img src="assets/shot-5.png" alt="">
+      <img src="assets/shot-6.png" alt="">
+      <img src="assets/shot-7.png" alt="">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><h2>Projekte &amp; Kunden</h2><div class="rule"></div></div>
+    <div class="proj-grid">
+
+      <div class="proj feature">
+        <div class="feat-head">
+          <div>
+            <div class="name">MSD</div>
+            <div class="role">Flagschiff-Projekt · end-to-end geowned</div>
+          </div>
+          <div class="badge">Allein geowned — zusammen mit VTG · operative Unterstützung: Lennart</div>
+        </div>
+        <ul class="two-col">
+          <li>Inventarisierung Luzern — 3 Tage allein vor Ort</li>
+          <li>3 Mitarbeiterverkäufe abgeschlossen</li>
+          <li>Verträge erstellt &amp; verhandelt</li>
+          <li>Angebote geschrieben</li>
+          <li>Logistikpartner vor Ort gesucht &amp; Angebote eingeholt</li>
+          <li>Teamplanung &amp; Retro-Termine</li>
+          <li>Rechnungsaufstellung &amp; Projektsteuerung</li>
+          <li>Stakeholder-Koordination über den gesamten Zyklus</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="name">VTG</div>
+        <div class="role">Projektplanung · mit MSD geowned</div>
+        <ul>
+          <li>Besichtigungen vor Ort begleitet</li>
+          <li>Verträge, Angebote &amp; Rechnungen</li>
+          <li>Retro-Termine &amp; Teamplanung</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="name">N26</div>
+        <div class="role">Madrid · 3 Tage vor Ort</div>
+        <ul>
+          <li>Angebote &amp; Slides</li>
+          <li>Stakeholder-Management</li>
+          <li>Inventarisierung &amp; QM</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="name">MBDA</div>
+        <div class="role">Mitarbeiterverkäufe</div>
+        <ul>
+          <li>2 Verkäufe abgeschlossen</li>
+          <li>Abwicklung &amp; Koordination</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="name">DB</div>
+        <div class="role">Ops · Dashboards</div>
+        <ul>
+          <li>Besichtigungen begleitet</li>
+          <li>DB-Dashboard-MVP aufgebaut</li>
+          <li>Wöchentliche Prozessverbesserung</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><h2>Woran das im Detail hängt</h2><div class="rule"></div></div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">⚙</div>
+        <div class="kicker">Automation · n8n</div>
+        <h3>Selbst gebaute Workflows</h3>
+        <ul>
+          <li><b>Automated Outreach Machine</b> — InMails, Direct Messaging, automatisiertes Reply-Handling (allein konzipiert &amp; umgesetzt)</li>
+          <li><b>Building-Radar Export</b> — geowned, mit Tommy umgesetzt</li>
+          <li><b>Signaling → Enrichment</b> in HubSpot</li>
+          <li><b>Content Machinery</b> — Prompt → fertige Posts</li>
+          <li><b>Leadgen-Flows</b> — Salesviewer, Deutsche Startups, Startupdetector · <b>LinkedIn Scraper</b></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="icon">▤</div>
+        <div class="kicker">Prozesse &amp; Dashboards</div>
+        <h3>Automatisiert &amp; visualisiert</h3>
+        <ul>
+          <li><b>LinkedIn Post-Generierung</b> — automatisierter Prozess</li>
+          <li><b>DB-Prozess</b> — Dashboard-MVP, wöchentliche Verbesserung</li>
+          <li><b>Events: Rechnung &amp; Angebote</b> — Prozess &amp; Übersicht</li>
+          <li><b>Ops Website-Leads</b> — automatisierter Lead-Prozess</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="icon">◑</div>
+        <div class="kicker">Marketing</div>
+        <h3>Digitale Präsenz &amp; Leads</h3>
+        <ul>
+          <li><b>Website</b> — Migration &amp; Redesign, seither alleinige Betreuung</li>
+          <li><b>HubSpot</b> — Umstrukturierung des CRM</li>
+          <li><b>Content-Pipeline</b> — skalierbare Post-Produktion</li>
+          <li><b>BR + Werki</b> — Betreuung</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="icon">◆</div>
+        <div class="kicker">Sales · Mitarbeiterverkäufe</div>
+        <h3>Abschlüsse &amp; Enablement</h3>
+        <ul>
+          <li><b>5 Verkäufe abgeschlossen</b> — MBDA 2× · MSD 3×</li>
+          <li><b>Target-Listen</b> selbst gebaut — 600+ FM/HR/GF angeschrieben</li>
+          <li><b>Einarbeitung Irina</b> — Wissenstransfer &amp; Skalierung</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Fenyx · Isabel</b> — Feedbackgespräch · Q1 &amp; Q2
+  </div>
+</footer>
+
+</body>
+</html>
